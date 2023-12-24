@@ -1,3 +1,12 @@
+# This Python program allows users to convert a number from one number system to another.
+# It defines a function, convert_number, that takes three parameters: 
+# number (the number to be converted), from_base (the base of the input number), 
+# and to_base (the base to which the number should be converted).
+# The program uses built-in Python functions to convert the input number to base 10 
+# and then converts it to the desired base by performing repeated division 
+# and storing remainders until the quotient becomes zero.
+# Users can input the number, its base, and the target base to get the converted number.
+# To use the program, run the main() function, which prompts the user for inputs.
 def convert_number(number, from_base, to_base):
     # Convert number to base 10
     base_10 = int(str(number), from_base)
