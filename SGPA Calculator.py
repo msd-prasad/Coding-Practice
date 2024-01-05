@@ -15,7 +15,7 @@ def printSGPA(credits, grades, system):
         if grade_point:
             SGPA += (credits[i] * grade_point) / sum(credits)
         else:
-            print("Uh-oh! You failed this semester :(")
+            print("Uh-oh! You failed :(")
             return
 
     # print the SGPA in the given system
