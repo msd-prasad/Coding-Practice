@@ -24,18 +24,17 @@ def pour_water(n, grid):
                     break
 
             if ("W" in print_grid[n - 1]) or ("W" in print_grid[0]) or left or right:
-                return 1
+                return
             queue.append((x, y))  # Add the cell to the queue for further processing
-            return 0
 
     # Initialize water level with the value at the center of the grid
     water_level = grid[center][center]
     print_grid[center][center] = "W"  # Mark the center cell as 'W' in the print_grid
     directions = [
-        (0, 1),
-        (1, 0),
-        (0, -1),
         (-1, 0),
+        (1, 0),
+        (0, 1),
+        (0, -1),
     ]  # Define directions: right, down, left, up
 
     queue = [(center, center)]  # Start with the center cell
@@ -48,9 +47,7 @@ def pour_water(n, grid):
             new_x, new_y = x + dx, y + dy
             if (new_x, new_y) not in visited:
                 visited.add((new_x, new_y))
-                status = spread_water(new_x, new_y, water_level)
-                if status:
-                    return
+                spread_water(new_x, new_y, water_level)
 
 
 # Getting input values
